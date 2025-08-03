@@ -1,0 +1,79 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fce4ec;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.password-screen {
+  flex-direction: column;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.key {
+  background-color: #f8bbd0;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.key:hover {
+  background-color: #f48fb1;
+}
+
+.input-display {
+  font-size: 24px;
+  margin-top: 20px;
+  letter-spacing: 8px;
+}
+
+.notepad {
+  background-color: #fff0f6;
+  border: 3px solid #f8bbd0;
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  text-align: left;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.notepad-screen.active .notepad {
+  opacity: 1;
+  transform: translateY(0);
+}
